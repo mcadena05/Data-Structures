@@ -10,12 +10,16 @@ def all_species(filename):
     Return:
         - set[str]: a set of strings
     """
-
+    file_info = open(filename)
     species = set()
 
-    # TODO: replace this with your code
-
+    for line in file_info:
+        file_info = line.rstrip()
+        word = file_info.split('|')     
+        species.add(word[1])
+        
     return species
+
 
 
 def get_villagers_by_species(filename, search_string="All"):
@@ -28,13 +32,20 @@ def get_villagers_by_species(filename, search_string="All"):
     Return:
         - list[str]: a list of names
     """
-
+    file_info = open(filename)
     villagers = []
 
-    # TODO: replace this with your code
-
+    for line in file_info:
+        file_info = line.rstrip()
+        word = file_info.split('|')     
+        species = word[1]
+        if species == search_string:
+            villagers.append(word[0])
+            villagers.sort()
+    pringt(villagers)
     return sorted(villagers)
 
+get_villagers_by_species("villagers.csv","Wolf")
 
 def all_names_by_hobby(filename):
     """Return a list of lists containing villagers' names, grouped by hobby.
@@ -50,57 +61,58 @@ def all_names_by_hobby(filename):
 
     return []
 
+def all_names_by_hobby(filename)
 
-def all_data(filename):
-    """Return all the data in a file.
+# def all_data(filename):
+#     """Return all the data in a file.
 
-    Each line in the file is a tuple of (name, species, personality, hobby,
-    saying).
+#     Each line in the file is a tuple of (name, species, personality, hobby,
+#     saying).
 
-    Arguments:
-        - filename (str): the path to a data file
+#     Arguments:
+#         - filename (str): the path to a data file
 
-    Return:
-        - list[tuple[str]]: a list of tuples containing strings
-    """
+#     Return:
+#         - list[tuple[str]]: a list of tuples containing strings
+#     """
 
-    all_data = []
+#     all_data = []
 
-    # TODO: replace this with your code
+#     # TODO: replace this with your code
 
-    return all_data
-
-
-def find_motto(filename, villager_name):
-    """Return the villager's motto.
-
-    Return None if you're not able to find a villager with the
-    given name.
-
-    Arguments:
-        - filename (str): the path to a data file
-        - villager_name (str): a villager's name
-
-    Return:
-        - str: the villager's motto or None
-    """
-
-    # TODO: replace this with your code
+#     return all_data
 
 
-def find_likeminded_villagers(filename, villager_name):
-    """Return a set of villagers with the same personality as the given villager.
+# def find_motto(filename, villager_name):
+#     """Return the villager's motto.
 
-    Arguments:
-        - filename (str): the path to a data file
-        - villager_name (str): a villager's name
+#     Return None if you're not able to find a villager with the
+#     given name.
+
+#     Arguments:
+#         - filename (str): the path to a data file
+#         - villager_name (str): a villager's name
+
+#     Return:
+#         - str: the villager's motto or None
+#     """
+
+#     # TODO: replace this with your code
+
+
+# def find_likeminded_villagers(filename, villager_name):
+#     """Return a set of villagers with the same personality as the given villager.
+
+#     Arguments:
+#         - filename (str): the path to a data file
+#         - villager_name (str): a villager's name
     
-    Return:
-        - set[str]: a set of names
+#     Return:
+#         - set[str]: a set of names
 
-    For example:
-        >>> find_likeminded_villagers('villagers.csv', 'Wendy')
-        {'Bella', ..., 'Carmen'}
-    """
+#     For example:
+#         >>> find_likeminded_villagers('villagers.csv', 'Wendy')
+#         {'Bella', ..., 'Carmen'}
+#     """
 
-    # TODO: replace this with your code
+#     # TODO: replace this with your code

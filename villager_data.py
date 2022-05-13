@@ -41,8 +41,8 @@ def get_villagers_by_species(filename, search_string="All"):
         species = word[1]
         if species == search_string:
             villagers.append(word[0])
-            villagers.sort()
-    pringt(villagers)
+            
+    print(villagers)
     return sorted(villagers)
 
 get_villagers_by_species("villagers.csv","Wolf")

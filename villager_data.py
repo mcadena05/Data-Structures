@@ -40,12 +40,10 @@ def get_villagers_by_species(filename, search_string="All"):
         word = file_info.split('|')     
         species = word[1]
         if species == search_string:
-            villagers.append(word[0])
-            
-    print(villagers)
+            villagers.append(word[0])          
+    
     return sorted(villagers)
 
-get_villagers_by_species("villagers.csv","Wolf")
 
 def all_names_by_hobby(filename):
     """Return a list of lists containing villagers' names, grouped by hobby.
@@ -57,11 +55,29 @@ def all_names_by_hobby(filename):
         - list[list[str]]: a list of lists containing names
     """
 
-    # TODO: replace this with your code
+    file_info = open(filename)
+    # return_list = [
+    #     sorted(fitness = []), sorted(nature = []), sorted(fashion = []), sorted(education = []), sorted(play = []), sorted(music = [])
+    # ]
+    fitness= []
+    fashion = []
+    nature= [] 
+    education = []
+    play = []
+    music = []
+    
+    return_list = [fitness, fashion, nature, education, play, music]
+    
+    for line in file_info:
+        file_info = line.rstrip()
+        word = file_info.split('|')     
+        hobbies = word[3]
+        if hobbies == "Fitness":
+            fitness.append(word[0])        
+    
+    return sorted(return_list)
 
-    return []
-
-def all_names_by_hobby(filename)
+all_names_by_hobby("villagers.csv")
 
 # def all_data(filename):
 #     """Return all the data in a file.

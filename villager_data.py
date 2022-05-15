@@ -73,9 +73,20 @@ def all_names_by_hobby(filename):
         word = file_info.split('|')     
         hobbies = word[3]
         if hobbies == "Fitness":
-            fitness.append(word[0])        
+            fitness.append(word[0])
+            return sorted(fitness)
+        elif hobbies == 'Fashion':
+            fashion.append(word[0])
+        elif hobbies == 'Nature':
+            nature.append(word[0])
+        elif hobbies == 'Education':
+            education.append(word[0])
+        elif hobbies == 'Play':
+            play.append(word[0])
+        elif hobbies == 'Music':
+            music.append(word[0])
     
-    return sorted(return_list)
+    print(sorted(return_list))
 
 all_names_by_hobby("villagers.csv")
 
